@@ -1,0 +1,262 @@
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #eef1f6;
+    color: #333;
+}
+header{
+    background-color: #1b2a4a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem 1rem 1rem;
+    text-align: center;
+    h1{
+        margin: 0;
+        font-size: 2.5rem;
+        color: #ffd166;
+    }
+    p{
+        margin: 0.5rem 0 1rem 0;
+        color: #d0d7e5;
+    }
+    nav{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        a{
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid #ffd166;
+            border-radius: 20px;
+        }
+        a:hover{
+            background-color: #ffd166;
+            color: #1b2a4a;
+        }
+    }
+}
+main{
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+footer{
+    background-color: #1b2a4a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Tarjetas generales */
+.tarjeta{
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 1.5rem 2rem;
+    line-height: 1.6;
+    overflow-x: auto; /* para que las tablas no se salgan en el móvil */
+    h2{
+        color: #1b2a4a;
+        text-align: center;
+        border-bottom: 3px solid #ffd166;
+        padding-bottom: 10px;
+    }
+    h3{
+        color: #1b2a4a;
+    }
+    a{
+        color: #2a6fdb;
+    }
+    .nota{
+        font-size: 0.9rem;
+        color: #666;
+        font-style: italic;
+    }
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+        thead th{
+            background-color: #1b2a4a;
+            color: white;
+            padding: 0.75rem 1rem;
+            text-align: center;
+        }
+        tbody{
+            td{
+                padding: 0.65rem 1rem;
+                border-bottom: 1px solid #eee;
+                text-align: center;
+            }
+            tr:nth-child(even){
+                background-color: #fafafa;
+            }
+        }
+        tfoot td{
+            padding: 0.75rem 1rem;
+            font-weight: bold;
+            text-align: center;
+            background-color: #ffd166;
+            color: #1b2a4a;
+        }
+    }
+}
+
+/* Aviso de la RAM */
+.aviso{
+    background-color: #fff4d6;
+    border-left: 5px solid #ffb703;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    h3{
+        margin-top: 0.5rem;
+    }
+}
+
+/* Tabla de chipsets */
+.destacado-oficina{
+    background-color: #d8e8ff;
+    font-weight: bold;
+}
+.destacado-ia{
+    background-color: #e8dcff;
+    font-weight: bold;
+}
+.dos-columnas{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    .caja-chipset{
+        flex: 1;
+        min-width: 250px;
+        border-radius: 10px;
+        padding: 0.5rem 1rem;
+        ul{
+            padding-left: 20px;
+        }
+        li{
+            margin-bottom: 10px;
+        }
+    }
+    .oficina{
+        background-color: #eef5ff;
+        border-top: 5px solid #2a6fdb;
+    }
+    .ia{
+        background-color: #f4eeff;
+        border-top: 5px solid #7b3fe4;
+    }
+}
+
+/* Perfil y componentes */
+.perfil{
+    background-color: #f7f9fc;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    ul{
+        list-style: square;
+        padding-left: 20px;
+    }
+}
+.componentes{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    .componente{
+        flex: 1 1 45%;
+        min-width: 250px;
+        box-sizing: border-box;
+        border: 1px solid #e3e7ee;
+        border-radius: 10px;
+        padding: 0.5rem 1rem;
+        h4{
+            margin: 0.5rem 0;
+        }
+        p{
+            margin: 0 0 0.5rem 0;
+            font-size: 0.95rem;
+        }
+    }
+}
+
+/* Colores de cada PC */
+.pc-oficina{
+    border-top: 8px solid #2a6fdb;
+    h2{
+        color: #2a6fdb;
+        border-bottom-color: #2a6fdb;
+    }
+    .componente h4{
+        color: #2a6fdb;
+    }
+    .presupuesto thead th{
+        background-color: #2a6fdb;
+    }
+}
+.pc-ia{
+    border-top: 8px solid #7b3fe4;
+    h2{
+        color: #7b3fe4;
+        border-bottom-color: #7b3fe4;
+    }
+    .componente h4{
+        color: #7b3fe4;
+    }
+    .presupuesto thead th{
+        background-color: #7b3fe4;
+    }
+}
+
+/* Gráfico de barras */
+.grafico{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    .barra-fila{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .etiqueta{
+        width: 110px;
+        font-size: 0.9rem;
+        text-align: right;
+    }
+    .barra{
+        color: white;
+        font-size: 0.8rem;
+        font-weight: bold;
+        padding: 6px 8px;
+        border-radius: 5px;
+        white-space: nowrap;
+        min-width: 90px;
+    }
+    .oficina{
+        background-color: #2a6fdb;
+    }
+    .ia{
+        background-color: #7b3fe4;
+    }
+}
+
+/* Fuentes */
+#fuentes ol li{
+    margin-bottom: 8px;
+}
