@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Configuración de dos ordenadores: uno de oficina y otro para entrenar modelos de IA">
+    <meta name="keywords" content="HTML5, CSS3, hardware, Intel, LGA1851, chipset, presupuesto">
+    <meta name="author" content="Alejandro Gonzalez Muñoz">
+    <link rel="stylesheet" href="style.css">
+    <title>Configura tu PC</title>
+</head>
+<body>
+    <header>
+        <h1>Configura tu PC</h1>
+        <p>Dos ordenadores, dos perfiles: oficina y desarrollo de IA</p>
+        <nav>
+            <a href="#chipsets">Sockets y chipsets</a>
+            <a href="#oficina">PC Oficina</a>
+            <a href="#ia">PC IA</a>
+            <a href="#comparativa">Comparativa</a>
+            <a href="#fuentes">Fuentes</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- INTRODUCCIÓN -->
+        <div class="tarjeta" id="intro">
+            <h2>Introducción</h2>
+            <p>
+                En esta página configuro dos ordenadores de sobremesa con procesadores <strong>Intel Core Ultra (Serie 2)</strong>.
+                El primero es para un <strong>perfil de oficina</strong> (ofimática, correo, navegador y videollamadas).
+                El segundo es para mí como <strong>desarrollador que entrena modelos de IA</strong>.
+                Cada componente está justificado y al final de cada equipo aparece su presupuesto.
+            </p>
+            <div class="aviso">
+                <h3>Dato importante: la RAM está muy cara en 2026</h3>
+                <p>
+                    Desde otoño de 2025 el precio de la memoria DDR5 se ha disparado porque los fabricantes dan prioridad
+                    a la memoria para servidores de IA. TrendForce prevé una subida acumulada de cerca del 45 % para finales de 2026 [3].
+                    Por eso, un kit de 16 GB que antes costaba unos 60 € ahora ronda los 300 € [6]. Esto hace que los dos
+                    presupuestos sean más altos de lo normal.
+                </p>
+            </div>
+        </div>
+
+        <!-- EJERCICIO 2: SOCKETS Y CHIPSETS -->
+        <div class="tarjeta" id="chipsets">
+            <h2>Procesador, socket y chipset</h2>
+            <p>
+                Antes de elegir la placa base hay que saber qué socket usa el procesador. Según Intel, los Core Ultra (Serie 2)
+                usan el socket <strong>LGA1851</strong>, y ese socket solo funciona con los chipsets de la <strong>serie 800</strong> [1][2].
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Paso</th>
+                        <th>PC Oficina</th>
+                        <th>PC IA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Procesador</strong></td>
+                        <td>Intel Core Ultra 5 225</td>
+                        <td>Intel Core Ultra 7 265K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Socket</strong></td>
+                        <td>LGA1851</td>
+                        <td>LGA1851</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Chipsets posibles</strong></td>
+                        <td>H810, B860, Z890, Q870, W880</td>
+                        <td>H810, B860, Z890, Q870, W880</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Chipset elegido</strong></td>
+                        <td class="destacado-oficina">H810</td>
+                        <td class="destacado-ia">Z890</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5. Placa base</strong></td>
+                        <td>MSI PRO H810M-B (93,99 €)</td>
+                        <td>MSI PRO Z890-P WIFI (239,32 €)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="dos-columnas">
+                <div class="caja-chipset oficina">
+                    <h3>¿Por qué H810 para la oficina?</h3>
+                    <ul>
+                        <li><strong>Razón 1:</strong> el Core Ultra 5 225 no es de la serie K, así que no se puede hacer overclock. Pagar por B860 o Z890 sería tirar dinero.</li>
+                        <li><strong>Razón 2:</strong> H810 tiene 8 líneas PCIe 4.0 en el chipset [2], suficientes para un SSD, USB y red. Una oficina no necesita más.</li>
+                    </ul>
+                </div>
+                <div class="caja-chipset ia">
+                    <h3>¿Por qué Z890 para la IA?</h3>
+                    <ul>
+                        <li><strong>Razón 1:</strong> es el único chipset de consumo que permite overclock de CPU y memoria, ideal para el 265K [1].</li>
+                        <li><strong>Razón 2:</strong> tiene 24 líneas PCIe 4.0 frente a las 14 de B860 [2], así caben más SSD NVMe para guardar datasets y modelos.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- PC OFICINA -->
+        <div class="tarjeta pc-oficina" id="oficina">
+            <h2>PC 1 · Oficina</h2>
+            <div class="perfil">
+                <h3>Perfil del usuario</h3>
+                <ul>
+                    <li><strong>Uso:</strong> Word, Excel, correo, navegador con muchas pestañas y videollamadas</li>
+                    <li><strong>Prioridad:</strong> fiable, silencioso, barato y que consuma poco</li>
+                    <li><strong>No necesita:</strong> tarjeta gráfica dedicada ni overclock</li>
+                </ul>
+            </div>
+
+            <h3>Justificación de cada componente</h3>
+            <div class="componentes">
+                <div class="componente">
+                    <h4>Procesador · Intel Core Ultra 5 225</h4>
+                    <p>
+                        Tiene 10 núcleos (6 de rendimiento y 4 de eficiencia) y llega a 4,9 GHz [7]. Es de sobra para ofimática.
+                        Lo más importante es que trae <strong>gráficos integrados</strong>, así que no hace falta comprar tarjeta gráfica.
+                        Además la versión Box incluye disipador, lo que ahorra otra pieza.
+                    </p>
+                </div>
+                <div class="componente">
+                    <h4>Placa base · MSI PRO H810M-B</h4>
+                    <p>
+                        Usa socket LGA1851 y chipset H810 (ver la explicación de arriba). Es formato Micro ATX, admite DDR5,
+                        tiene red de 2,5 Gb y ranura M.2 para el SSD. Es de las placas LGA1851 más baratas del mercado.
+                    </p>
+                </div>
+                <div class="componente">
+                    <h4>RAM · Kingston FURY Beast DDR5 16 GB (2×8 GB) 5600 MHz</h4>
+                    <p>
+                        16 GB es lo mínimo hoy para tener Teams o Zoom abierto junto al navegador sin que vaya lento.
+                        Elijo dos módulos para que funcione en <strong>doble canal</strong>, que mejora el rendimiento de los gráficos integrados.
+                        No pongo 32 GB porque, con los precios actuales, costaría casi 600 € solo la RAM.
+                    </p>
+                </div>
+                <div class="componente">
+                    <h4>Almacenamiento · Kingston NV3 500 GB NVMe</h4>
+                    <p>
+                        Un SSD NVMe hace que Windows arranque en segundos. 500 GB bastan porque en una oficina los
+                        archivos suelen guardarse en la nube o en el servidor de la empresa.
+                    </p>
+                </div>
+                <div class="componente">
+                    <h4>Fuente · Tempest PSU PRO 650W 80+ Bronze</h4>
+                    <p>
+                        El procesador gasta unos 65 W en uso normal, así que 650 W dejan mucho margen y la fuente trabaja
+                        fría y silenciosa. Tiene certificado 80 Plus Bronze y más de 1.800 opiniones con un 4,6 sobre 5 [12].
+                    </p>
+                </div>
+                <div class="componente">
+                    <h4>Caja · Tempest Compact Shade RGB</h4>
+                    <p>
+                        Es compacta, admite placas Micro ATX y es barata. No hace falta una caja con mucha ventilación
+                        porque el equipo no lleva tarjeta gráfica y apenas genera calor.
+                    </p>
+                </div>
+            </div>
+
+            <h3>Presupuesto</h3>
+            <table class="presupuesto">
+                <thead>
+                    <tr>
+                        <th>Componente</th>
+                        <th>Modelo</th>
+                        <th>Precio</th>
+                        <th>Enlace</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Procesador</td>
+                        <td>Intel Core Ultra 5 225 Box</td>
+                        <td>174,99 €</td>
+                        <td><a href="https://www.pccomponentes.com/marcas/intel/procesadores/intel-core-ultra-5" target="_blank">Ver</a></td>
+                    </tr>
+                    <tr>
+                        <td>Placa base</td>
+                        <td>MSI PRO H810M-B</td>
+                        <td>93,99 €</td>
+                        <td><a href="https://www.pccomponentes.com/categorias/placas-base/socket-1851" target="_blank">Ver</a></td>
+                    </tr>
+                    <tr>
+                        <td>RAM</td>
+                        <td>Kingston FURY Beast DDR5 16 GB (2x8) 5600 CL40</td>
+                        <td>306,13 €</td>
+                        <td><a href="https://www.pccomponentes.com/kingston-fury-beast-ddr5-5600mhz-16gb-2x8gb-cl40" target="_blank">Ver</a></td>
+                    </tr>
+                    <tr>
+                        <td>SSD</td>
+                        <td>Kingston NV3 500 GB NVMe PCIe 4.0</td>
+                        <td>99,95 €</td>
+                        <td><a href="https://www.pccomponentes.com/categorias/discos-duros/500gb" target="_blank">Ver</a></td>
+                    </tr>
+                    <tr>
+                        <td>Fuente</td>
+                        <td>Tempest PSU PRO 650W 80+ Bronze</td>
+                        <td>49,99 €</td>
+                        <td><a href="https://www.pccomponentes.com/tempest-gaming-psu-pro-650w-80-plus-bronce" target="_blank">Ver</a></td>
+                    </tr>
+                    <tr>
+                        <td>Caja</td>
+                        <td>Tempest Compact Shade RGB</td>
+                        <td>44,99 €</td>
+                        <td><a href="https://www.pccomponentes.com/brands/tempest/cajas-pc" target="_blank">Ver</a></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">TOTAL</td>
+                        <td colspan="2">770,04 €</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <h3>¿En qué se va el dinero?</h3>
+            <div class="grafico">
+                <div class="barra-fila">
+                    <span class="etiqueta">RAM</span>
+                    <div class="barra oficina" style="width: 40%;">306 € (40 %)</div>
+                </div>
+                <div class="barra-fila">
+                    <span class="etiqueta">Procesador</span>
+                    <div class="barra oficina" style="width: 23%;">175 € (23 %)</div>
+                </div>
+                <div class="barra-fila">
+                    <span class="etiqueta">SSD</span>
+                    <div class="barra oficina" style="width: 13%;">100 € (13 %)</div>
+                </div>
+                <div class="barra-fila">
+                    <span class="etiqueta">Placa base</span>
+                    <div class="barra oficina" style="width: 12%;">94 € (12 %)</div>
+                </div>
+                <div class="barra-fila">
+                    <span class="etiqueta">Fuente + caja</span>
+                    <div class="barra oficina" style="width: 12%;">95 € (12 %)</div>
+                </div>
+            </div>
+            <p class="nota">La RAM es el componente más caro del PC de oficina por la subida de precios de 2026.</p>
+        </div>
+
+        <!-- PC IA -->
+        <div class="tarjeta pc-ia" id="ia">
+            <h2>PC 2 · Desarrollador de IA</h2>
+            <div class="perfil">
+                <h3>Perfil del usuario</h3>
+                <ul>
+                    <li><strong>Uso:</strong> entrenar y ajustar modelos de IA con PyTorch, programar y usar Docker</li>
+                    <li><strong>Prioridad:</strong> GPU con mucha VRAM, SSD rápido y buena refrigeración para entrenamientos de horas</li>
+                    <li><strong>Necesita:</strong> tarjeta gráfica NVIDIA (por CUDA) y poder ampliar en el futuro</li>
+                </ul>
+            </div>
+
+            <h3>Justificación de cada componente</h3>
+            <div class="componentes">
+                <div class="componente">
+                    <h4>Procesador · Intel Core Ultra 7 265K</h4>
+                    <p>
+                        Tiene 20 núcleos (8 de rendimiento y 12 de eficiencia) y llega a 5,5 GHz. Muchos núcleos ayudan a preparar
+                        los datos mientras la GPU entrena. Incluye una <strong>NPU</strong> para tareas de IA pequeñas y gráficos
+                        integrados, así la pantalla funciona aunque la GPU esté al 100 %. Intel bajó su precio 100 dólares en 2025 [8].
+                    </p>
+                </div>
+                <div class="componente">
+                    <h4>Placa base · MSI PRO Z890-P WIFI</h4>
+                    <p>
+                        Chipset Z890, formato ATX, 4 ranuras DDR5 (hasta 256 GB), <strong>4 ranuras M.2</strong>, PCIe 5.0 x16 para la GPU,
+                        WiFi 7 y red de 5 Gb [9]. Las 4 ranuras de RAM permiten pasar a 64 GB cuando baje el precio.
+                    </p>
+                </div>
+                <div class="componente">
+                    <h4>RAM · Kingston FURY Beast DDR5 32 GB (2×16 GB) 5600 MHz</h4>
+                    <p>
+                        Para IA lo ideal serían 64 GB, pero hoy cuestan más de 1.250 € [6]. Con 32 GB se pueden cargar datasets medianos
+                        y tener el IDE y Docker abiertos. Como la placa tiene 4 ranuras, se añaden otros 32 GB más adelante.
+                    </p>
+                </div>
+                <div class="componente">
+                    <h4>Tarjeta gráfica · ASUS PRIME GeForce RTX 5070 Ti 16 GB</h4>
+                    <p>
+                        Es el componente más importante. Tiene <strong>16 GB de VRAM GDDR7</strong> [10] y 8.960 núcleos CUDA.
+                        La VRAM decide qué tamaño de modelo puedes entrenar: con 8 o 12 GB te quedas corto enseguida.
+                        Elijo NVIDIA porque PyTorch y TensorFlow funcionan con CUDA, que es solo de NVIDIA.
+                    </p>
+                </div>
+                <div class="componente">
+                    <h4>Almacenamiento · Samsung 990 Pro 2 TB NVMe</h4>
+                    <p>
+                        Lee a 7.450 MB/s, así los datasets cargan muy rápido y la GPU no se queda esperando. 2 TB dan espacio
+                        para datasets, entornos de Python y modelos guardados.
+                    </p>
+                </div>
+                <div class="componente">
+                    <h4>Fuente · Corsair RM850e 850W 80+ Gold</h4>
+                    <p>
+                        La GPU puede gastar unos 300 W y el procesador hasta 250 W, unos 600 W en total. Con 850 W hay margen.
+                        La certificación Gold gasta menos luz en entrenamientos largos y trae el conector 12V-2x6 nativo para la GPU [11].
+                    </p>
+                </div>
+                <div class="componente">
+                    <h4>Refrigeración · Arctic Liquid Freezer III Pro 360</h4>
+                    <p>
+                        El 265K no trae disipador y puede calentarse mucho en entrenamientos de varias horas. Una líquida de 360 mm
+                        lo mantiene frío sin bajar de velocidad. Arctic tiene muy buena relación calidad-precio.
+                    </p>
+                </div>
+                <div class="componente">
+                    <h4>Caja · Lian Li Lancool 216</h4>
+                    <p>
+                        Tiene frontal de malla para que entre mucho aire, cabe una GPU de hasta 392 mm y admite el radiador de 360 mm.
+                        Un buen flujo de aire es clave cuando GPU y CPU trabajan al máximo a la vez.
+                    </p>
+                </div>
+            </div>
+
+            <h3>Presupuesto</h3>
+            <table class="presupuesto">
+                <thead>
+                    <tr>
+                        <th>Componente</th>
+                        <th>Modelo</th>
+                        <th>Precio</th>
+                        <th>Enlace</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Procesador</td>
+                        <td>Intel Core Ultra 7 265K</td>
+                        <td>447,55 €</td>
+                        <td><a href="https://www.pccomponentes.com/procesador-intel-core-ultra-7-265k-ia-integrada-3-3-5-5ghz-box" target="_blank">Ver</a></td>
+                    </tr>
+                    <tr>
+                        <td>Placa base</td>
+                        <td>MSI PRO Z890-P WIFI</td>
+                        <td>239,32 €</td>
+                        <td><a href="https://www.pccomponentes.com/placa-base-msi-pro-z890-p-wifi" target="_blank">Ver</a></td>
+                    </tr>
+                    <tr>
+                        <td>RAM</td>
+                        <td>Kingston FURY Beast DDR5 32 GB (2x16) 5600 CL40</td>
+                        <td>549,00 €</td>
+                        <td><a href="https://www.pccomponentes.com/kingston-fury-beast-ddr5-5600mhz-32gb-2x16gb-cl40" target="_blank">Ver</a></td>
+                    </tr>
+                    <tr>
+                        <td>Gráfica</td>
+                        <td>ASUS PRIME RTX 5070 Ti OC 16 GB</td>
+                        <td>892,46 €</td>
+                        <td><a href="https://www.pccomponentes.com/buscar/?query=asus%20prime%20rtx%205070%20ti" target="_blank">Ver</a></td>
+                    </tr>
+                    <tr>
+                        <td>SSD</td>
+                        <td>Samsung 990 Pro 2 TB NVMe PCIe 4.0</td>
+                        <td>363,96 €</td>
+                        <td><a href="https://www.pccomponentes.com/marcas/samsung/discos-duros/ssd" target="_blank">Ver</a></td>
+                    </tr>
+                    <tr>
+                        <td>Fuente</td>
+                        <td>Corsair RM850e 850W 80+ Gold</td>
+                        <td>143,91 €</td>
+                        <td><a href="https://www.pccomponentes.com/corsair-rme-series-rm850e-850w-80-plus-gold-modular" target="_blank">Ver</a></td>
+                    </tr>
+                    <tr>
+                        <td>Refrigeración</td>
+                        <td>Arctic Liquid Freezer III Pro 360</td>
+                        <td>77,98 €</td>
+                        <td><a href="https://www.pccomponentes.com/brands/arctic/refrigeracion-liquida" target="_blank">Ver</a></td>
+                    </tr>
+                    <tr>
+                        <td>Caja</td>
+                        <td>Lian Li Lancool 216</td>
+                        <td>80,99 €</td>
+                        <td><a href="https://www.pccomponentes.com/torre-pc-lian-li-lancool-216-cristal-templado-usb-3-0-negra" target="_blank">Ver</a></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">TOTAL</td>
+                        <td colspan="2">2.795,17 €</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <h3>¿En qué se va el dinero?</h3>
+            <div class="grafico">
+                <div class="barra-fila">
+                    <span class="etiqueta">Gráfica</span>
+                    <div class="barra ia" style="width: 32%;">892 € (32 %)</div>
+                </div>
+                <div class="barra-fila">
+                    <span class="etiqueta">RAM</span>
+                    <div class="barra ia" style="width: 20%;">549 € (20 %)</div>
+                </div>
+                <div class="barra-fila">
+                    <span class="etiqueta">Procesador</span>
+                    <div class="barra ia" style="width: 16%;">448 € (16 %)</div>
+                </div>
+                <div class="barra-fila">
+                    <span class="etiqueta">SSD</span>
+                    <div class="barra ia" style="width: 13%;">364 € (13 %)</div>
+                </div>
+                <div class="barra-fila">
+                    <span class="etiqueta">Resto</span>
+                    <div class="barra ia" style="width: 11%;">303 € (11 %)</div>
+                </div>
+                <div class="barra-fila">
+                    <span class="etiqueta">Placa base</span>
+                    <div class="barra ia" style="width: 8%;">239 € (8 %)</div>
+                </div>
+            </div>
+            <p class="nota">En un PC de IA la mayor parte del dinero debe ir a la GPU, porque es la que hace el entrenamiento.</p>
+        </div>
+
+        <!-- COMPARATIVA -->
+        <div class="tarjeta" id="comparativa">
+            <h2>Comparativa de los dos equipos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>PC Oficina</th>
+                        <th>PC IA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Núcleos de CPU</td>
+                        <td>10</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>Chipset</td>
+                        <td>H810</td>
+                        <td>Z890</td>
+                    </tr>
+                    <tr>
+                        <td>RAM</td>
+                        <td>16 GB</td>
+                        <td>32 GB (ampliable a 256 GB)</td>
+                    </tr>
+                    <tr>
+                        <td>Gráficos</td>
+                        <td>Integrados</td>
+                        <td>RTX 5070 Ti 16 GB</td>
+                    </tr>
+                    <tr>
+                        <td>Almacenamiento</td>
+                        <td>500 GB</td>
+                        <td>2 TB</td>
+                    </tr>
+                    <tr>
+                        <td>Fuente</td>
+                        <td>650 W Bronze</td>
+                        <td>850 W Gold</td>
+                    </tr>
+                    <tr>
+                        <td>Precio total</td>
+                        <td>770,04 €</td>
+                        <td>2.795,17 €</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="nota">Los precios son de PcComponentes y son orientativos. Pueden cambiar de un día para otro, sobre todo la RAM.</p>
+        </div>
+
+        <!-- FUENTES -->
+        <div class="tarjeta" id="fuentes">
+            <h2>Fuentes y referencias</h2>
+            <ol>
+                <li>Intel. <em>Intel 800 Series Desktop Chipsets (ARK)</em>. <a href="https://www.intel.com/content/www/us/en/products/details/chipsets/desktop-chipsets.html" target="_blank">intel.com</a></li>
+                <li>Puget Systems. <em>Z890 vs. B860 vs. H810</em> (2025). <a href="https://www.pugetsystems.com/labs/articles/z890-vs-b860-vs-h810/" target="_blank">pugetsystems.com</a></li>
+                <li>Geeknetic. <em>La DDR5 se encarece de nuevo y 2026 podría traer otra subida de hasta el 45 %</em>. <a href="https://www.geeknetic.es/Noticia/37050/La-DDR5-se-encarece-de-nuevo-y-2026-podria-traer-otra-subida-de-hasta-el-45-por-ciento-por-la-presion-de-la-IA-y-la-demanda-de-servidores.html" target="_blank">geeknetic.es</a></li>
+                <li>DropReference. <em>Escasez de RAM DDR5: balance 2025 y perspectivas 2026</em>. <a href="https://dropreference.com/es/blog/news/escasez-ram-ddr5-2026" target="_blank">dropreference.com</a></li>
+                <li>MuyComputer. <em>El precio de la DDR4 y DDR5 se ha duplicado</em>. <a href="https://www.muycomputer.com/tags/DDR5/" target="_blank">muycomputer.com</a></li>
+                <li>PcComponentes. Fichas de memoria RAM Kingston y Corsair DDR5. <a href="https://www.pccomponentes.com/kingston-fury-beast-ddr5-5600mhz-16gb-2x8gb-cl40" target="_blank">pccomponentes.com</a></li>
+                <li>Tom's Hardware / 3DTested. <em>Especificaciones Core Ultra 5 225</em>. <a href="https://www.3dtested.com/pc-components/cpus/intel-slashes-core-ultra-5-225-and-core-ultra-5-225f-pricing-by-up-to-21-percent-get-entry-level-arrow-lake-for-13-percent-below-msrp" target="_blank">3dtested.com</a></li>
+                <li>Notebookcheck. <em>Intel rebaja 100 dólares el precio de dos CPU Core Ultra 200S</em>. <a href="https://www.notebookcheck.org/Intel-rebaja-100-dolares-el-precio-de-dos-CPU-Core-Ultra-200S-para-equipos-de-sobremesa.1011424.0.html" target="_blank">notebookcheck.org</a></li>
+                <li>MSI. <em>PRO Z890-P WIFI</em>, tienda oficial. <a href="https://es-store.msi.com/products/pro-z890-p-wifi-placas-base" target="_blank">msi.com</a></li>
+                <li>PC-Welt. <em>GeForce RTX 5070 Ti con 16 GB GDDR7</em>. <a href="https://www.pcwelt.de/?p=2608841" target="_blank">pcwelt.de</a></li>
+                <li>PcComponentes. <em>Corsair RMe Series RM850e</em>. <a href="https://www.pccomponentes.com/corsair-rme-series-rm850e-850w-80-plus-gold-modular" target="_blank">pccomponentes.com</a></li>
+                <li>PcComponentes. <em>Opiniones Tempest PSU PRO 650W</em>. <a href="https://www.pccomponentes.com/opiniones/fuente-alimentacion-tempest-psu-pro-650w-80-plus-bronze-fuente-de-alimentacion" target="_blank">pccomponentes.com</a></li>
+            </ol>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Alejandro Gonzalez Muñoz · Configura tu PC · Precios consultados en octubre de 2026</p>
+    </footer>
+</body>
+</html>
